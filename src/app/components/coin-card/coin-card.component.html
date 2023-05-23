@@ -1,0 +1,47 @@
+<div class="card" *ngFor="let coin of this.data">
+
+  <div class="card-left">
+    <div class="image">
+      <img src="../assets/Bitcoin.svg.png" alt="{{coin.CoinInfo.FullName}}">
+    </div>
+    <div style="display:flex;flex-direction: column; margin-left:10px;">
+      <div class="coin-name">
+        {{coin.CoinInfo.FullName}}
+      </div>
+      <br>
+      <div class="symbol-name">
+        {{coin.CoinInfo.Internal}}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card-middle">
+    <div class="card-middle-left">
+      <span>Current: {{coin.DISPLAY.USD.PRICE}}</span>
+      <span>High: {{coin.DISPLAY.USD.HIGH24HOUR}}</span>
+      <span>Low: {{coin.DISPLAY.USD.LOW24HOUR}}</span>
+    </div>
+    <div class="card-middle-middle">
+
+    </div>
+    <div class="card-middle-right">
+      chart here
+    </div>
+  </div>
+
+  <div class="card-right">
+
+    <div>
+      other thing
+    </div>
+    <div>
+      other thing 2
+    </div>
+  </div>
+  <!-- *ngIf="this.dataFavorites.indexOf(coin) == -1"-->
+  <div class="favorite">
+    <button class="fav-btn" (click)="addCoinToFavorite(coin)"><i class="bi bi-bookmarks"></i></button>
+  </div>
+
+</div>
